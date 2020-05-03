@@ -1,9 +1,24 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 import App from './App.vue';
 import store from './store';
+import AuthHandler from './components/AuthHandler';
+
+Vue.use(VueRouter);
+
+export const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    {
+      path: '/oauth2/callback/',
+      component: AuthHandler
+    }
+  ]
+})
 
 
 new Vue({
   render: h => h(App),
-  store
+  store,
+  router
 }).$mount('#app')
