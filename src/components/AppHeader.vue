@@ -1,9 +1,9 @@
 <template>
   <div class="ui secondary pointing menu">
-    <a class="active item">Image Storage</a>
+    <router-link to="/" class="active item">Image Storage</router-link>
     <div v-if="isLoggedIn" class="right menu">
-      <a class="ui item">Gallery</a>
-      <a class="ui item">Upload</a>
+      <router-link to="/" class="ui item">Gallery</router-link>
+      <router-link to="/upload" class="ui item">Upload</router-link>
       <a class="ui item" @click="logout">Logout</a>
     </div>
     <div v-else class="right menu">
